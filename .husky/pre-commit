@@ -1,0 +1,4 @@
+echo "🚀 Execute pre-commit hook..."
+
+# npx tsc --noemit preserve
+# npx lint-staged

@@ -1,1 +1,1 @@
-# browser-logger
+# jlogger

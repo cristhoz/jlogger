@@ -1,0 +1,59 @@
+{
+  "name": "jlogger",
+  "version": "0.1.0",
+  "description": "Simple JavaScript logger",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && renamer --find \".js\" --replace \".cjs\" dist/**/*.js",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,md}\"",
+    "validate": "npm run lint && npm run format:check && npm run type-check",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristhoz/jlogger.git"
+  },
+  "author": "Cristian de la Hoz <cristhoz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristhoz/jlogger/issues"
+  },
+  "homepage": "https://github.com/cristhoz/jlogger#readme",
+  "devDependencies": {
+    "@eslint/js": "9.21.0",
+    "@types/node": "22.13.7",
+    "@typescript-eslint/eslint-plugin": "8.25.0",
+    "@typescript-eslint/parser": "8.25.0",
+    "eslint": "9.21.0",
+    "eslint-config-prettier": "10.0.2",
+    "eslint-plugin-prettier": "5.2.3",
+    "globals": "16.0.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.4.3",
+    "prettier": "3.5.2",
+    "renamer": "5.0.2",
+    "rimraf": "6.0.1",
+    "typescript": "5.7.3",
+    "typescript-eslint": "8.25.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md,yml,yaml}": "prettier --write"
+  }
+}
