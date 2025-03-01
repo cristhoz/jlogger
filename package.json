@@ -1,0 +1,19 @@
+{
+  "name": "jlogger",
+  "version": "1.0.0",
+  "description": "Simple JavaScript logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristhoz/jlogger.git"
+  },
+  "author": "Cristian de la Hoz <cristhoz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristhoz/jlogger/issues"
+  },
+  "homepage": "https://github.com/cristhoz/jlogger#readme"
+}
