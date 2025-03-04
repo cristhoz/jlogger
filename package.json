@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "nx run-many --target=build --all",
+    "lint": "nx run-many --target=lint --all",
+    "lint:fix": "nx run-many --target=lint --all --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
